@@ -1,22 +1,16 @@
 fileFormatVersion: 2
-guid: 511ae54752c779e4c854618586ec0037
+guid: e4cab8e308c9ccc4ea0209fa06a37be8
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -898730309803188099
-    second: PlayerIdle1
+      213: 7128176850282287329
+    second: Attack1
   - first:
-      213: -5849894884514023677
-    second: PlayerWalk1
+      213: -7060566482935280526
+    second: Attack2
   - first:
-      213: 5469514174122797691
-    second: PlayerWalk2
-  - first:
-      213: 4402281725169258624
-    second: PlayerWalk3
-  - first:
-      213: 2254793875719457162
-    second: PlayerJump
+      213: 3208108991185585938
+    second: Attack3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -118,106 +112,64 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: PlayerIdle1
+      name: Attack1
       rect:
         serializedVersion: 2
         x: 1
-        y: 476
-        width: 16
+        y: 362
+        width: 32
         height: 32
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 9
+      pivot: {x: 0.2628866, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d70ed4f7b811783f0800000000000000
-      internalID: -898730309803188099
+      spriteID: 1e01d31241f5ce260800000000000000
+      internalID: 7128176850282287329
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerWalk1
+      name: Attack2
       rect:
         serializedVersion: 2
-        x: 29
-        y: 476
-        width: 16
+        x: 34
+        y: 362
+        width: 32
         height: 32
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 9
+      pivot: {x: 0.2628866, y: -0.0064077377}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 307ba2bb89ff0dea0800000000000000
-      internalID: -5849894884514023677
+      spriteID: 27c0d973134d30e90800000000000000
+      internalID: -7060566482935280526
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerWalk2
+      name: Attack3
       rect:
         serializedVersion: 2
-        x: 46
-        y: 476
-        width: 16
+        x: 67
+        y: 362
+        width: 44
         height: 32
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 9
+      pivot: {x: 0.840242, y: -0.012921333}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b7aad82a92e97eb40800000000000000
-      internalID: 5469514174122797691
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: PlayerWalk3
-      rect:
-        serializedVersion: 2
-        x: 63
-        y: 476
-        width: 16
-        height: 32
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 08058ed97eb081d30800000000000000
-      internalID: 4402281725169258624
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: PlayerJump
-      rect:
-        serializedVersion: 2
-        x: 84
-        y: 476
-        width: 16
-        height: 32
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a890cf36513aa4f10800000000000000
-      internalID: 2254793875719457162
+      spriteID: 2178a54512e758c20800000000000000
+      internalID: 3208108991185585938
       vertices: []
       indices: 
       edges: []
