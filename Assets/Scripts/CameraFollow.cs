@@ -12,12 +12,12 @@ public class CameraFollow : MonoBehaviour
     // Start is called before the first frame update
     private void LateUpdate()
     {
-        if (player)
+        if (GameManager.instance.playerInstance)
         {
             Vector3 cameraPos;
 
             cameraPos = transform.position;
-            cameraPos.x = Mathf.Clamp(player.transform.position.x, minXClamp, maxXClamp);
+            cameraPos.x = Mathf.Clamp(GameManager.instance.playerInstance.transform.position.x, minXClamp, maxXClamp);
             transform.position = cameraPos;
         }
     }

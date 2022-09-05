@@ -21,29 +21,29 @@ public class PlayerController : MonoBehaviour
 
     Coroutine jumpForceChange;
 
-    private int _lives = 3;
+    //private int _lives = 3;
 
-    public int lives
-    {
-        get { return _lives; }
-        set 
-        {
-            //Losing a life
-            // if (_lives > value)
+    //public int lives
+    //{
+    //    get { return _lives; }
+    //    set 
+    //    {
+    //        //Losing a life
+    //        // if (_lives > value)
 
-            _lives = value;
+    //        _lives = value;
 
-            if ( _lives > maxLives)
-            {
-                _lives = maxLives;
-            }
+    //        if ( _lives > maxLives)
+    //        {
+    //            _lives = maxLives;
+    //        }
 
-            //If lives are less than zero = gameover
-            //if(_lives < 0)
+    //        //If lives are less than zero = gameover
+    //        //if(_lives < 0)
 
-            Debug.Log("Lives are set to: " + lives.ToString());
-        }
-    }
+    //        Debug.Log("Lives are set to: " + lives.ToString());
+    //    }
+    //}
 
     public int maxLives = 3;
 

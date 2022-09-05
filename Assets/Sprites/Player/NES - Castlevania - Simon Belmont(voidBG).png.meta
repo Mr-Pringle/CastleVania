@@ -17,6 +17,15 @@ TextureImporter:
   - first:
       213: 2254793875719457162
     second: PlayerJump
+  - first:
+      213: 5838400284797642631
+    second: PlayerTakeDamage
+  - first:
+      213: -2713234326124691510
+    second: PlayerDie1
+  - first:
+      213: 8335670840267733453
+    second: PlayerDie2
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -206,9 +215,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 84
-        y: 476
+        y: 484
         width: 16
-        height: 32
+        height: 24
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -218,6 +227,69 @@ TextureImporter:
       bones: []
       spriteID: a890cf36513aa4f10800000000000000
       internalID: 2254793875719457162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerTakeDamage
+      rect:
+        serializedVersion: 2
+        x: 275
+        y: 476
+        width: 16
+        height: 29
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78727e7302a260150800000000000000
+      internalID: 5838400284797642631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerDie1
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 484
+        width: 16
+        height: 21
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: acff0f671c7a85ad0800000000000000
+      internalID: -2713234326124691510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerDie2
+      rect:
+        serializedVersion: 2
+        x: 325
+        y: 492
+        width: 32
+        height: 15
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc97db607704ea370800000000000000
+      internalID: 8335670840267733453
       vertices: []
       indices: 
       edges: []

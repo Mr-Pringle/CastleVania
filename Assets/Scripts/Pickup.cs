@@ -24,7 +24,7 @@ public class Pickup : MonoBehaviour
             switch (currentPickup)
             {
                 case Pickups.Life:
-                    curPlayer.lives++;
+                    GameManager.instance.lives++;
                     Debug.Log("Life was picked up");
                     break;
                 case Pickups.Powerups:
