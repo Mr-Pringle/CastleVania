@@ -28,7 +28,7 @@ public class Shoot : MonoBehaviour
 
     public void Fire()
     {
-        if (!sr.flipX)
+        if (sr.flipX)
         {
             Projectile curProjectile = Instantiate(projectilePrefab,
                 spawnPointRight.position, spawnPointRight.rotation);
@@ -43,15 +43,5 @@ public class Shoot : MonoBehaviour
 
     }
 
-    // Start is called before the first frame update
-    void start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+   
 }

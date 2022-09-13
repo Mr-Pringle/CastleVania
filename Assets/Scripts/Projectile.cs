@@ -6,6 +6,7 @@ public class Projectile : MonoBehaviour
 {
     public float speed;
     public float lifetime;
+    public int damage;
 
     // Start is called before the first frame update
     void Start()
@@ -17,9 +18,29 @@ public class Projectile : MonoBehaviour
         Destroy(gameObject, lifetime);
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        
+        if (gameObject.tag == "PlayerProjectile")
+        {
+            if (collision.gameObject.tag == "Enemy")
+            {
+                Enemy curEnemy = collision.gameObject.GetComponent<Enemy>();
+
+                if (curEnemy)
+                {
+                    curEnemy.TakeDamage(damage);
+                    Destroy(gameObject);
+                }
+            }
+        }
+
+        if (gameObject.tag == "EnemyProjectile")
+        {
+            if (collision.gameObject.tag == "Player")
+            {
+                GameManager.instance.lives--;
+                Destroy(gameObject);
+            }
+        }
     }
 }

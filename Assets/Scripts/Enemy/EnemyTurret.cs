@@ -4,13 +4,10 @@ using UnityEngine;
 
 public class EnemyTurret : Enemy
 {
-
+    Shoot shootScript;
     public float turretFireDistance;
     public float projectileFireRate;
     float timeSinceLastFire;
-
-
-    
 
     // Start is called before the first frame update
     public override void Start()
@@ -24,21 +21,21 @@ public class EnemyTurret : Enemy
     }
 
     // Update is called once per frame
-    void Update()
+    public void Update()
     {
         AnimatorClipInfo[] currentClips = anim.GetCurrentAnimatorClipInfo(0);
 
-        if (currentClips[0].clip.name != "TurretFire")
+        if (currentClips[0].clip.name != "SkeletonFire")
         {
             if (GameManager.instance.playerInstance)
             {
                 if (GameManager.instance.playerInstance.transform.position.x < transform.position.x)
                 {
-                    sr.flipX = true;
+                    sr.flipX = false;
                 }
                 else
                 {
-                    sr.flipX = false;
+                    sr.flipX = true;
                 }
             }
 
