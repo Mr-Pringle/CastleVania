@@ -43,7 +43,7 @@ public class EnemyTurret : Enemy
 
             if (distance <= turretFireDistance)
             {
-                sr.color = Color.red;
+                sr.color = Color.white;
                 if (Time.time >= timeSinceLastFire + projectileFireRate)
                 {
                     anim.SetTrigger("Fire");
@@ -52,7 +52,7 @@ public class EnemyTurret : Enemy
             }
             else
             {
-                sr.color = Color.white;
+                sr.color = Color.red;
             }
         }
 

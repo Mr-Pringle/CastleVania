@@ -7,6 +7,8 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    //public enum MovementState { normal, stairs }
+    //MovementState currentMovement = MovementState.normal;
 
     Rigidbody2D rb;
     SpriteRenderer sr;
@@ -73,6 +75,16 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //switch (currentMovement)
+        //{
+        //    case MovementState.normal:
+
+        //        break;
+        //    case MovementState.stairs:
+                
+        //        break;
+        //}
+
         AnimatorClipInfo[] curPlayingClip = anim.GetCurrentAnimatorClipInfo(0);
 
         float hInput = Input.GetAxisRaw("Horizontal");
@@ -150,4 +162,12 @@ public class PlayerController : MonoBehaviour
         jumpForce /= 2;
         jumpForceChange = null;
     }
+
+    //private void OnTriggerStay2D(Collider2D collision)
+    //{
+    //    if (collision.gameObject.tag == "StairTrigger")
+    //    {
+           
+    //    }
+    //}
 }
