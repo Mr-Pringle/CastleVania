@@ -7,7 +7,7 @@ TextureImporter:
     second: ThrowingDagger
   - first:
       213: -828307010804663669
-    second: HealthPickup
+    second: Lives
   - first:
       213: 6246158105901327507
     second: MoneyPickup
@@ -17,6 +17,12 @@ TextureImporter:
   - first:
       213: -4283210410576556048
     second: ThrowingAxe
+  - first:
+      213: 5341962755355523562
+    second: Lives
+  - first:
+      213: -7765455685075789747
+    second: Door
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -139,13 +145,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HealthPickup
+      name: Lives
       rect:
         serializedVersion: 2
-        x: 27
-        y: 118
-        width: 16
-        height: 16
+        x: 29
+        y: 119
+        width: 12
+        height: 10
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -218,6 +224,48 @@ TextureImporter:
       bones: []
       spriteID: 0ff445333dafe84c0800000000000000
       internalID: -4283210410576556048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HealthPickup
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 119
+        width: 12
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae93554b2d6722a40800000000000000
+      internalID: 5341962755355523562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Door
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 87
+        width: 17
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d481504923f8b3490800000000000000
+      internalID: -7765455685075789747
       vertices: []
       indices: 
       edges: []

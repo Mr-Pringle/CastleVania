@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4232620193825533373}
   - component: {fileID: -39623915001240174}
   m_Layer: 0
-  m_Name: Health
+  m_Name: Powerup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -73,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: 1350030455
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: -828307010804663669, guid: 78eefed0040f0f24cbe9e39f27586acc, type: 3}
+  m_Sprite: {fileID: 1288808562180448090, guid: 78eefed0040f0f24cbe9e39f27586acc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -101,7 +101,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.84210527, y: 0.84210527}
+    oldSize: {x: 0.6315789, y: 0.7368421}
     newSize: {x: 0.84210527, y: 0.84210527}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -122,4 +122,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14167c570c52d07469e44233158d239e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentPickup: 1
+  currentPickup: 0

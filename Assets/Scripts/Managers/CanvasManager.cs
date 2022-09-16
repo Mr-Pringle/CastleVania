@@ -24,6 +24,7 @@ public class CanvasManager : MonoBehaviour
 
     [Header("Text")]
     public Text volSliderText;
+    public Text lifeText;
 
 
     // Start is called before the first frame update
@@ -52,10 +53,20 @@ public class CanvasManager : MonoBehaviour
 
         if (returnToMenu)
             returnToMenu.onClick.AddListener(() => LoadMenu());
+
+        if (lifeText)
+            GameManager.instance.OnLifeValueChange.AddListener((value) => UpdateLifeText(value));
+    }
+
+    void UpdateLifeText(int value)
+    {
+        if (lifeText)
+            lifeText.text = "Lives: " + value.ToString();
     }
 
     void ResumeGame()
     {
+        Time.timeScale = 1;
         pauseMenu.SetActive(false);
     }
 
@@ -67,6 +78,12 @@ public class CanvasManager : MonoBehaviour
 
     void ShowMainMenu()
     {
+        if (SceneManager.GetActiveScene().name == "Level")
+        {
+            SceneManager.LoadScene("Title");
+            return;
+        }
+
         settingsMenu.SetActive(false);
         mainMenu.SetActive(true);
     }
@@ -77,7 +94,7 @@ public class CanvasManager : MonoBehaviour
             volSliderText.text = value.ToString();
     }
 
-    void StartGame()
+    public void StartGame()
     {
         SceneManager.LoadScene("Level");
     }
@@ -107,11 +124,13 @@ public class CanvasManager : MonoBehaviour
                 //HINT FOR LAB 8
                 if (pauseMenu.activeSelf)
                 {
-                    //do something to pause the game
+                    Time.timeScale = 0.0f;
+                    //SceneManager.LoadScene("PauseMenu");
                 }
                 else
                 {
-                    //do something to unpause the game
+                    Time.timeScale = 1.0f;
+                    //SceneManager.LoadScene("Level");
                 }
             }
         }

@@ -2,10 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Events;
 
 
 public class GameManager : MonoBehaviour
 {
+    
+
     static GameManager _instance = null;
 
     public static GameManager instance
@@ -28,13 +31,20 @@ public class GameManager : MonoBehaviour
             }
 
             _lives = value;
+            
 
             if (_lives > maxLives)
             {
                 _lives = maxLives;
             }
+
+
+            OnLifeValueChange.Invoke(_lives);
         }
     }
+
+    
+    
 
     public int maxLives = 3;
 
@@ -42,9 +52,9 @@ public class GameManager : MonoBehaviour
     [HideInInspector] public PlayerController playerInstance;
     [HideInInspector] public Transform currentSpawnPoint;
     [HideInInspector] public Level currentLevel;
-
+    [HideInInspector] public UnityEvent<int> OnLifeValueChange;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         if (instance)
         {

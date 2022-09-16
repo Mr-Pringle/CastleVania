@@ -36,21 +36,24 @@ public class EnemyWalker : Enemy
 
     private void Update()
     {
-        {
-            AnimatorClipInfo[] curClips = anim.GetCurrentAnimatorClipInfo(0);
+        if (Time.timeScale == 0)
+            return;
 
-            if (curClips[0].clip.name == "ZombieWalk")
+        
+        AnimatorClipInfo[] curClips = anim.GetCurrentAnimatorClipInfo(0);
+
+        if (curClips[0].clip.name == "ZombieWalk")
+        {
+            if (!sr.flipX)
             {
-                if (!sr.flipX)
-                {
-                    rb.velocity = new Vector2(-speed, rb.velocity.y);
-                }
-                else
-                {
-                    rb.velocity = new Vector2(speed, rb.velocity.y);
-                }
+                rb.velocity = new Vector2(-speed, rb.velocity.y);
+            }
+            else
+            {
+                rb.velocity = new Vector2(speed, rb.velocity.y);
             }
         }
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

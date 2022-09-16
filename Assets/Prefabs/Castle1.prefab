@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &9173801218084861226
+--- !u!1 &5615629270657188964
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,38 +8,38 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1424795000520489803}
-  - component: {fileID: 798784864490535415}
-  - component: {fileID: 2274194531793331129}
-  - component: {fileID: 1058824307498084133}
+  - component: {fileID: 5615629270657188960}
+  - component: {fileID: 5615629270657188961}
+  - component: {fileID: 5615629270657188966}
+  - component: {fileID: 5615629270657188967}
   m_Layer: 0
-  m_Name: Score
-  m_TagString: Pickup
+  m_Name: Castle1
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1424795000520489803
+--- !u!4 &5615629270657188960
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9173801218084861226}
+  m_GameObject: {fileID: 5615629270657188964}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -62.32537, y: -0.3542853, z: 0}
+  m_LocalPosition: {x: 4.795, y: -0.629, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &798784864490535415
+--- !u!212 &5615629270657188961
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9173801218084861226}
+  m_GameObject: {fileID: 5615629270657188964}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -73,53 +73,49 @@ SpriteRenderer:
   m_SortingLayerID: 1350030455
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 6246158105901327507, guid: 78eefed0040f0f24cbe9e39f27586acc, type: 3}
+  m_Sprite: {fileID: -6487131320420995762, guid: 818412cfbb7c3c04688ef3404c75179b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.7894737, y: 0.84210527}
+  m_Size: {x: 3.7894738, y: 2.9473684}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &2274194531793331129
-BoxCollider2D:
+--- !u!95 &5615629270657188966
+Animator:
+  serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9173801218084861226}
+  m_GameObject: {fileID: 5615629270657188964}
   m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.009302139, y: 0.032040745}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.7894737, y: 0.84210527}
-    newSize: {x: 0.7894737, y: 0.84210527}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.7628746, y: 0.7628767}
-  m_EdgeRadius: 0
---- !u!114 &1058824307498084133
-MonoBehaviour:
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5391ec1ecc8840049b94520270405a65, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!111 &5615629270657188967
+Animation:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9173801218084861226}
+  m_GameObject: {fileID: 5615629270657188964}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 14167c570c52d07469e44233158d239e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentPickup: 2
+  serializedVersion: 3
+  m_Animation: {fileID: 0}
+  m_Animations:
+  - {fileID: 0}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0

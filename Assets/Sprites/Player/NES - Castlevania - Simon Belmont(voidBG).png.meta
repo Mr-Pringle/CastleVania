@@ -26,6 +26,9 @@ TextureImporter:
   - first:
       213: 8335670840267733453
     second: PlayerDie2
+  - first:
+      213: -1138115738364318625
+    second: HitEffect
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -290,6 +293,27 @@ TextureImporter:
       bones: []
       spriteID: dc97db607704ea370800000000000000
       internalID: 8335670840267733453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HitEffect
+      rect:
+        serializedVersion: 2
+        x: 727
+        y: 42
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5c638514c99430f0800000000000000
+      internalID: -1138115738364318625
       vertices: []
       indices: 
       edges: []

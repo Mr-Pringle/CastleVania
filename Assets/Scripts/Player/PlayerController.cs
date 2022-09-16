@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour
     public float speed = 5.0f;
     public int jumpForce = 300;
     public bool isGrounded;
+    public bool hasInput;
     public LayerMask isGroundLayer;
     public Transform groundCheck;
     public float groundCheckRadius = 0.02f;
@@ -81,17 +82,22 @@ public class PlayerController : MonoBehaviour
 
         //        break;
         //    case MovementState.stairs:
-                
+
         //        break;
         //}
 
+        isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, isGroundLayer);
+
+        if (Time.timeScale == 0)
+            return;
+        
         AnimatorClipInfo[] curPlayingClip = anim.GetCurrentAnimatorClipInfo(0);
 
         float hInput = Input.GetAxisRaw("Horizontal");
         float vInput = Input.GetAxisRaw("Vertical");
         bool isFired = Input.GetButtonDown("Fire1");
 
-        isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, isGroundLayer);
+
 
 
 
@@ -120,12 +126,9 @@ public class PlayerController : MonoBehaviour
             rb.AddForce(Vector2.up * jumpForce);
         }
 
-        if (!isGrounded && Input.GetButtonDown("Vertical"))
-        {
-            isFired = true;
-        }
+        if (isGrounded)
+            rb.gravityScale = 1;
 
-        anim.SetBool("isFired", isFired);
         anim.SetFloat("MoveValue", Mathf.Abs(hInput));
         anim.SetBool("isGrounded", isGrounded);
 
@@ -133,6 +136,7 @@ public class PlayerController : MonoBehaviour
         {
             sr.flipX = (hInput > 0);
         }
+        
     }
     public void IncreaseGravity()
     {

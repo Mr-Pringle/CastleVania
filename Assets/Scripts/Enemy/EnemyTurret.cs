@@ -23,6 +23,9 @@ public class EnemyTurret : Enemy
     // Update is called once per frame
     public void Update()
     {
+        if (Time.timeScale == 0)
+            return;
+
         AnimatorClipInfo[] currentClips = anim.GetCurrentAnimatorClipInfo(0);
 
         if (currentClips[0].clip.name != "SkeletonFire")
@@ -53,6 +56,11 @@ public class EnemyTurret : Enemy
             else
             {
                 sr.color = Color.red;
+            }
+
+            if (health <= 0)
+            {
+                DestroyMyself();
             }
         }
 
