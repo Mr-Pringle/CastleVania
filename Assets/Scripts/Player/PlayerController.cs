@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 [RequireComponent(typeof(Rigidbody2D), typeof(SpriteRenderer), typeof(Animator))]
 
@@ -13,6 +14,7 @@ public class PlayerController : MonoBehaviour
     Rigidbody2D rb;
     SpriteRenderer sr;
     Animator anim;
+    AudioSourceManager sfxManager;
 
     public float speed = 5.0f;
     public int jumpForce = 300;
@@ -22,31 +24,14 @@ public class PlayerController : MonoBehaviour
     public Transform groundCheck;
     public float groundCheckRadius = 0.02f;
 
+    public AudioClip jumpSFX;
+    public AudioClip diveSFX;
+   
+
     Coroutine jumpForceChange;
 
-    //private int _lives = 3;
 
-    //public int lives
-    //{
-    //    get { return _lives; }
-    //    set 
-    //    {
-    //        //Losing a life
-    //        // if (_lives > value)
-
-    //        _lives = value;
-
-    //        if ( _lives > maxLives)
-    //        {
-    //            _lives = maxLives;
-    //        }
-
-    //        //If lives are less than zero = gameover
-    //        //if(_lives < 0)
-
-    //        Debug.Log("Lives are set to: " + lives.ToString());
-    //    }
-    //}
+    
 
     public int maxLives = 3;
 
@@ -56,6 +41,7 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
+        sfxManager = GetComponent<AudioSourceManager>();
 
         if (speed <= 0)
         {
@@ -124,6 +110,7 @@ public class PlayerController : MonoBehaviour
         {
             rb.velocity = Vector2.zero;
             rb.AddForce(Vector2.up * jumpForce);
+            sfxManager.Play(jumpSFX, false);
         }
 
         if (isGrounded)
@@ -141,6 +128,7 @@ public class PlayerController : MonoBehaviour
     public void IncreaseGravity()
     {
         rb.gravityScale = 5;
+        sfxManager.Play(diveSFX, false);
     }
 
     public void StartJumpForceChange()

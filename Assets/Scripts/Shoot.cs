@@ -6,16 +6,19 @@ public class Shoot : MonoBehaviour
 {
 
     SpriteRenderer sr;
+    AudioSourceManager sfxManager;
 
     public float projectileSpeed;
     public Transform spawnPointLeft;
     public Transform spawnPointRight;
 
     public Projectile projectilePrefab;
+    public AudioClip fireSFX;
 
     private void Start()
     {
         sr = GetComponent<SpriteRenderer>();
+        sfxManager = GetComponent<AudioSourceManager>();
 
         if (projectileSpeed <= 0)
             projectileSpeed = 9.0f;
@@ -41,6 +44,7 @@ public class Shoot : MonoBehaviour
             curProjectile.speed = -projectileSpeed;
         }
 
+        sfxManager.Play(fireSFX, false);
     }
 
    

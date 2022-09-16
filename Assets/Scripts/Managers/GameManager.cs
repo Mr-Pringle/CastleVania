@@ -5,9 +5,9 @@ using UnityEngine.SceneManagement;
 using UnityEngine.Events;
 
 
+
 public class GameManager : MonoBehaviour
 {
-    
 
     static GameManager _instance = null;
 
@@ -38,8 +38,25 @@ public class GameManager : MonoBehaviour
                 _lives = maxLives;
             }
 
+            if (_lives <= 0)
+            {
+                
+                SceneManager.LoadScene("Title");
+            }
 
             OnLifeValueChange.Invoke(_lives);
+        }
+    }
+
+    public int _score = 0;
+
+    public int score
+    {
+        get { return _score; }
+        set
+        {
+            _score = value;
+            OnScoreValueChange.Invoke(_score);
         }
     }
 
@@ -53,6 +70,8 @@ public class GameManager : MonoBehaviour
     [HideInInspector] public Transform currentSpawnPoint;
     [HideInInspector] public Level currentLevel;
     [HideInInspector] public UnityEvent<int> OnLifeValueChange;
+    [HideInInspector] public UnityEvent<int> OnScoreValueChange;
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -97,5 +116,16 @@ public class GameManager : MonoBehaviour
     void Respawn()
     {
         playerInstance.transform.position = currentSpawnPoint.position;
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (gameObject.tag == "Player")
+        {
+            if (collision.gameObject.tag == "Door")
+            {
+                SceneManager.LoadScene("Title");
+            }
+        }     
     }
 }

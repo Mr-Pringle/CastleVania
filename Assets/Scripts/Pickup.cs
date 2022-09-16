@@ -14,12 +14,14 @@ public class Pickup : MonoBehaviour
     }
 
     public Pickups currentPickup;
+    public AudioClip pickupSound;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Player")
         {
             PlayerController curPlayer = collision.gameObject.GetComponent<PlayerController>();
+            AudioSourceManager sfxManager = collision.gameObject.GetComponent<AudioSourceManager>();
 
             switch (currentPickup)
             {
@@ -32,9 +34,12 @@ public class Pickup : MonoBehaviour
                     Debug.Log("Powerup was picked up");
                     break;
                 case Pickups.Score:
+                    GameManager.instance.score += 50;
                     Debug.Log("Score was picked up");
                     break;
             }
+            sfxManager.Play(pickupSound, false);
+
             Destroy(gameObject);
         }
     }

@@ -9,6 +9,7 @@ public class Enemy : MonoBehaviour
 
     protected SpriteRenderer sr;
     protected Animator anim;
+    protected AudioSourceManager sfxManager;
 
     protected int _health;
     public int maxHealth;
@@ -22,7 +23,13 @@ public class Enemy : MonoBehaviour
 
             if (_health > maxHealth)
             {
+                _health = maxHealth;
+            }
+
+            if (_health <= 0)
+            {
                 Death();
+                DestroyMyself();
             }
         }
     }
@@ -32,6 +39,7 @@ public class Enemy : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         sr = GetComponent<SpriteRenderer>();
+        sfxManager = GetComponent<AudioSourceManager>();
 
         if (maxHealth <= 0)
         {

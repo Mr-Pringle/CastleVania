@@ -3,9 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.Audio;
 
 public class CanvasManager : MonoBehaviour
 {
+    public AudioMixer auioMixer;
+
     [Header("Buttons")]
     public Button startButton;
     public Button settingButton;
@@ -13,11 +16,14 @@ public class CanvasManager : MonoBehaviour
     public Button backButton;
     public Button resumeGame;
     public Button returnToMenu;
+    public Button goToCredits;
+    public Button backFromCreds;
 
     [Header("Menus")]
     public GameObject mainMenu;
     public GameObject settingsMenu;
     public GameObject pauseMenu;
+    public GameObject creditsMenu;
 
     [Header("Slider")]
     public Slider volSlider;
@@ -25,6 +31,7 @@ public class CanvasManager : MonoBehaviour
     [Header("Text")]
     public Text volSliderText;
     public Text lifeText;
+    public Text scoreText;
 
 
     // Start is called before the first frame update
@@ -44,7 +51,10 @@ public class CanvasManager : MonoBehaviour
 
         if (volSlider)
         {
-            volSlider.onValueChanged.AddListener((value) => SliderValueChange(value));
+            float mixerValue;
+            auioMixer.GetFloat("MusicVol", out mixerValue);
+            volSlider.onValueChanged.AddListener((value) => MusicValueChange(value));
+            volSlider.value = mixerValue + 80;
             volSliderText.text = volSlider.value.ToString();
         }
 
@@ -54,14 +64,30 @@ public class CanvasManager : MonoBehaviour
         if (returnToMenu)
             returnToMenu.onClick.AddListener(() => LoadMenu());
 
+        if (backFromCreds)
+            backFromCreds.onClick.AddListener(() => LoadMenu());
+
+        if (goToCredits)
+            goToCredits.onClick.AddListener(() => ShowCredits());
+
         if (lifeText)
             GameManager.instance.OnLifeValueChange.AddListener((value) => UpdateLifeText(value));
+
+        if (scoreText)
+            GameManager.instance.OnScoreValueChange.AddListener((value) => UpdateScoreText(value));
     }
 
     void UpdateLifeText(int value)
     {
         if (lifeText)
             lifeText.text = "Lives: " + value.ToString();
+    }
+
+    void UpdateScoreText(int value)
+    {
+        if (scoreText)
+            scoreText.text = "Score: " + value.ToString();
+            
     }
 
     void ResumeGame()
@@ -76,6 +102,12 @@ public class CanvasManager : MonoBehaviour
         settingsMenu.SetActive(true);
     }
 
+    void ShowCredits()
+    {
+        mainMenu.SetActive(false);
+        creditsMenu.SetActive(true);
+    }
+
     void ShowMainMenu()
     {
         if (SceneManager.GetActiveScene().name == "Level")
@@ -88,10 +120,13 @@ public class CanvasManager : MonoBehaviour
         mainMenu.SetActive(true);
     }
 
-    void SliderValueChange(float value)
+    void MusicValueChange(float value)
     {
         if (volSliderText)
+        {
             volSliderText.text = value.ToString();
+            auioMixer.SetFloat("MusicVol", value - 80);
+        }  
     }
 
     public void StartGame()
